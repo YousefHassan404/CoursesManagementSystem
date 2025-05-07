@@ -5,7 +5,7 @@ import cors from "cors";
 import router from "../routers/index.js"; 
 import path from "path";
 import { fileURLToPath } from "url";
-
+import serverless from "serverless-http"
 
 dotenv.config();
 
@@ -43,4 +43,4 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello from Express on Vercel!" });
 });
 
-export default (app);
+export default serverless(app);
